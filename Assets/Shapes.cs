@@ -26,10 +26,11 @@ public class Shapes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //_shapeRenders.SetWidth(width,width);
+       
+       _shapeRenders.SetWidth(width,width);
         if (isLooped)
         { DrawLooped(); }
-        //else { DrawOverlapped(); }
+       else { DrawOverlapped(); }
     }
 
     void DrawLooped()
@@ -47,15 +48,15 @@ public class Shapes : MonoBehaviour
         }
         _shapeRenders.loop = true;
     }
-    //void DrawOverlapped()
-    //{
-    //    DrawLooped();
-    //    _shapeRenders.positionCount += extraSteps;
-    //    int positionCount = _shapeRenders.positionCount;
+    void DrawOverlapped()
+    {
+        DrawLooped();
+        _shapeRenders.positionCount += extraSteps;
+        int positionCount = _shapeRenders.positionCount;
 
-    //    for(int i = 0; i < extraSteps; i++)
-    //    {
-    //        _shapeRenders.SetPosition(positionCount - extraSteps + i,_shapeRenders.GetPosition(i));
-    //    }
-    //}
+        for (int i = 0; i < extraSteps; i++)
+        {
+            _shapeRenders.SetPosition(positionCount - extraSteps + i, _shapeRenders.GetPosition(i));
+        }
+    }
 }
