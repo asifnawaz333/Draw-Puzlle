@@ -1,4 +1,0 @@
-repository "Draw-Puzlle@Asifnaw33@cloud"
-  path "/"
-    br "/main"
-    co "/main"
